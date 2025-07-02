@@ -6,7 +6,7 @@
     --yellow: rgb(197, 154, 0);
     --white: rgb(255, 255, 255);
     --grey: rgb(216, 216, 216);
-    --border: 0px solid red;
+    --border: 1px solid red;
 }
 
 h1,
@@ -48,6 +48,11 @@ body {
     display: grid;
     grid-template-columns: 200px 4fr;
     grid-template-rows: 120px 3fr;
+}
+
+h3 {
+    font-weight: 800;
+    font-size: 12px;
 }
 
 /* -------------------------------- */
@@ -233,16 +238,19 @@ body {
 
 
 .content .your-projects {
-    border: 1px solid red;
+    border: --var(border);
     grid-column: 1 / 7;
     grid-row: 1 / -1;
     display: block;
 }
 
 .content .announce {
-    border: 1px solid red;
     grid-column: 7 / 9;
     grid-row: 1 / 2;
+    border: var(--border);
+    display: flex;
+    flex-direction: column;
+
 }
 
 .content .trending {
@@ -252,42 +260,71 @@ body {
 }
 
 .content .your-projects .grid {
+    border: var(--border);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
+    height: calc(100% - 1rem);
 }
 
 .content .your-projects .grid .card {
-    border: 1px solid red;
+    border: var(--border);
+    background: linear-gradient(to right, rgb(217, 217, 0) 2%, whitesmoke 2%);
+    border-radius: 5px;
+    height: 100%;
+
+}
+
+.content .icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.content .icon {
+    height: 20px;
+    width: 20px;
 }
 
 
 
-.content .title {}
 
-.content .grid {}
+.content {
+    height: calc(100% - 3rem);
+}
 
-.content .announce {
-    grid-column: 7 / 9;
-    grid-row: 1 / 2;
-    background-color: rgb(68, 111, 148);
+.content .announce .card {
+    border: var(--border);
+    background-color: whitesmoke;
+    border-radius: 5px;
+    flex-grow: 1;
 
+
+}
+
+.card {
+    padding: 10px;
+    font-size: 10px;
+    ;
 }
 
 .content>* {
     padding: 5px;
 }
 
-
-
-.content .trending .player {
-    background-color: aliceblue;
-    grid-column: 7 / 9;
-    grid-row: 2 / 3;
+.content .trending {
     display: flex;
     flex-direction: column;
-
-
 }
+
+.content .trending .grid {
+    border-radius: 5px;
+    background-color: whitesmoke;
+    flex-grow: 1;
+}
+
+
 
 .content .player {}

@@ -6,7 +6,7 @@
     --yellow: rgb(197, 154, 0);
     --white: rgb(255, 255, 255);
     --grey: rgb(216, 216, 216);
-    --border: 1px solid red;
+    /* --border: 1px solid red; */
 }
 
 h1,
@@ -250,13 +250,14 @@ h3 {
     border: var(--border);
     display: flex;
     flex-direction: column;
-
+    max-width: 200px;
 }
 
 .content .trending {
-    border: 1px solid red;
+    border: var(--border);
     grid-column: 7 / 9;
     grid-row: 2 / 3;
+    max-width: 200px;
 }
 
 .content .your-projects .grid {
@@ -274,10 +275,14 @@ h3 {
     background: linear-gradient(to right, rgb(217, 217, 0) 2%, whitesmoke 2%);
     border-radius: 5px;
     height: 100%;
+    display: grid;
+
 
 }
 
 .content .icons {
+    align-self: end;
+    border: var(--border);
     display: flex;
     justify-content: flex-end;
     gap: 8px;
@@ -286,6 +291,7 @@ h3 {
 .content .icon {
     height: 20px;
     width: 20px;
+    filter: invert(50%);
 }
 
 
@@ -295,13 +301,20 @@ h3 {
     height: calc(100% - 3rem);
 }
 
+.content .announce {}
+
 .content .announce .card {
     border: var(--border);
     background-color: whitesmoke;
     border-radius: 5px;
     flex-grow: 1;
+    padding: 20px;
+}
 
-
+.content .card>* {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -317,12 +330,32 @@ h3 {
 .content .trending {
     display: flex;
     flex-direction: column;
+
+
 }
 
 .content .trending .grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: left;
     border-radius: 5px;
     background-color: whitesmoke;
     flex-grow: 1;
+    padding: 20px;
+
+}
+
+.content .trending .grid>* {
+    display: flex;
+    gap: 5px;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(213, 167, 255);
+    border-radius: 50%;
 }
 
 
